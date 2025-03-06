@@ -1,0 +1,44 @@
+{
+	"basic_bumper": {
+		"name": "Basic Bumper",
+		"equiptment_type": "BUMPER",
+		"secondary_type": "BUMPER",
+		"level": 1
+	},
+	"basic_cab": {
+		"name": "Basic Cab",
+		"equiptment_type": "CAB",
+		"secondary_type": "CAB",
+		"level": 1
+	},
+	"interceptor_cab": {
+		"name": "Interceptor Cab",
+		"equiptment_type": "CAB",
+		"secondary_type": "CAB",
+		"level": 1
+	},
+	"hotrod_cab": {
+		"name": "Hotrod Cab",
+		"equiptment_type": "CAB",
+		"secondary_type": "CAB",
+		"level": 1
+	},
+	"basic_engine": {
+		"name": "Basic Engine",
+		"equiptment_type": "ENGINE",
+		"secondary_type": "ENGINE",
+		"level": 1
+	},
+	"basic_exhaust": {
+		"name": "Basic Exhaust",
+		"equiptment_type": "EXHAUST",
+		"secondary_type": "EXHAUST",
+		"level": 1
+	},
+	"basic_wheel": {
+		"name": "Basic Wheel",
+		"equiptment_type": "FRONT_WHEELS",
+		"secondary_type": "BACK_WHEELS",
+		"level": 1
+	}
+}

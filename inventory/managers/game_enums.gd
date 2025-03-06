@@ -1,0 +1,12 @@
+class_name GameEnums
+
+
+enum EQUPTMENT_TYPE {
+	BUMPER,
+	CAB,
+	ENGINE,
+	EXHAUST,
+	FRONT_WHEELS,
+	BACK_WHEELS
+}
+
