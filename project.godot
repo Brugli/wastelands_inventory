@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "Affix",
+"language": "GDScript",
+"path": "res://inventory/items/scripts/affix.gd"
+}, {
+"base": "Resource",
+"class": "AffixGroup",
+"language": "GDScript",
+"path": "res://inventory/items/scripts/affix_group.gd"
+}, {
 "base": "InventorySlot",
 "class": "EquiptmentSlot",
 "language": "GDScript",
-"path": "res://inventory/scripts/equipitment_slot.gd"
+"path": "res://inventory/scripts/equipment_slot.gd"
 }, {
 "base": "Reference",
 "class": "GameEnums",
@@ -35,6 +45,8 @@ _global_script_classes=[ {
 "path": "res://inventory/items/scripts/item.gd"
 } ]
 _global_script_class_icons={
+"Affix": "",
+"AffixGroup": "",
 "EquiptmentSlot": "",
 "GameEnums": "",
 "Inventory": "",

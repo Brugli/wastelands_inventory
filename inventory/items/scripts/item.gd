@@ -2,8 +2,8 @@ class_name Item extends TextureRect
 
 var id
 var item_name
-var equiptment_type = GameEnums.EQUPTMENT_TYPE
-var secondary_type = GameEnums.EQUPTMENT_TYPE
+var equipment_type = GameEnums.EQUIPMENT_TYPE
+var secondary_type = GameEnums.EQUIPMENT_TYPE
 var level = 1
 var components = {}
 
@@ -15,11 +15,11 @@ func _init(item_id, data):
 	level = data.level
 	texture = load("res://inventory/items/resources/"+id+".png")
 	
-	if data.has("equiptment_type"):
-		equiptment_type = GameEnums.EQUPTMENT_TYPE[data.equiptment_type]
+	if data.has("equipment_type"):
+		equipment_type = GameEnums.EQUIPMENT_TYPE[data.equipment_type]
 		
 	if data.has("secondary_type"):
-		secondary_type = GameEnums.EQUPTMENT_TYPE[data.secondary_type]
+		secondary_type = GameEnums.EQUIPMENT_TYPE[data.secondary_type]
 
 func _ready():
 	pass

@@ -1,6 +1,7 @@
 extends Node
 
 export(NodePath) onready var item_in_hand_node = get_node(item_in_hand_node) as Control
+export(NodePath) onready var item_void = get_node(item_void) as Control
 export(NodePath) onready var item_info = get_node(item_info) as Control
 
 var inventories : Array = []
@@ -12,6 +13,7 @@ func _ready():
 	SignalManager.connect("item_picked", self, "_on_item_picked")
 	SignalManager.connect("player_inventory_ready", self, "_on_player_inventory_ready")
 	SignalManager.connect("inventory_ready", self, "_on_inventory_ready")
+	item_void.connect("gui_input", self, "_on_void_gui_input")
 	
 func _on_inventory_ready(inventory):
 	inventories.append(inventory)
@@ -49,6 +51,7 @@ func _on_gui_input_slot(event:InputEvent, slot:InventorySlot):
 		set_hand_position(event.global_position)
 		
 func set_hand_position(pos):
+	set_item_void_filter()
 	if item_in_hand:
 		item_in_hand.rect_position = (pos - item_offset)
 	
@@ -62,3 +65,13 @@ func _on_item_picked(item, sender):
 		
 func _on_player_inventory_ready(inv):
 	player_inventories = inv
+
+func set_item_void_filter():
+	item_void.mouse_filter = Control.MOUSE_FILTER_STOP if item_in_hand else Control.MOUSE_FILTER_IGNORE
+	
+func _on_void_gui_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		SignalManager.emit_signal("item_dropped", item_in_hand)
+		item_in_hand_node.remove_child(item_in_hand)
+		item_in_hand = null
+		set_item_void_filter()

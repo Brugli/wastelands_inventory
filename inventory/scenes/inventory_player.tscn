@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://inventory/scripts/equiptment.gd" type="Script" id=1]
+[ext_resource path="res://inventory/scripts/equipment.gd" type="Script" id=1]
 [ext_resource path="res://inventory/scripts/player_inventory_container.gd" type="Script" id=2]
 [ext_resource path="res://inventory/resources/inventory_container.png" type="Texture" id=3]
 [ext_resource path="res://inventory/scenes/equipitment_slot.tscn" type="PackedScene" id=4]
@@ -22,7 +22,7 @@ patch_margin_right = 2
 patch_margin_bottom = 2
 script = ExtResource( 2 )
 inventory = NodePath("VBoxContainer/inventory")
-equiptment = NodePath("VBoxContainer/equiptment")
+equipment = NodePath("VBoxContainer/equipment")
 
 [node name="VBoxContainer" type="Control" parent="."]
 anchor_right = 1.0
@@ -32,22 +32,22 @@ margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
 
-[node name="equiptment" type="TextureRect" parent="VBoxContainer"]
+[node name="equipment" type="TextureRect" parent="VBoxContainer"]
 margin_right = 156.0
 margin_bottom = 214.0
 rect_min_size = Vector2( 156, 214 )
 script = ExtResource( 1 )
 inventory_name = "EQUIPTMENT"
 title = NodePath("NinePatchRect/Label")
-slot_container = NodePath("equiptment_container")
-bumper = NodePath("equiptment_container/equiptment_bumper")
-cab = NodePath("equiptment_container/equiptment_cab")
-engine = NodePath("equiptment_container/equiptment_engine")
-exhaust = NodePath("equiptment_container/equiptment_exhaust")
-front_wheels = NodePath("equiptment_container/equiptment_front_wheels")
-back_wheels = NodePath("equiptment_container/equiptment_back_wheels")
+slot_container = NodePath("equipment_container")
+bumper = NodePath("equipment_container/equipment_bumper")
+cab = NodePath("equipment_container/equipment_cab")
+engine = NodePath("equipment_container/equipment_engine")
+exhaust = NodePath("equipment_container/equipment_exhaust")
+front_wheels = NodePath("equipment_container/equipment_front_wheels")
+back_wheels = NodePath("equipment_container/equipment_back_wheels")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/equiptment"]
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/equipment"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -78.0
@@ -59,7 +59,7 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/equiptment/NinePatchRect"]
+[node name="Label" type="Label" parent="VBoxContainer/equipment/NinePatchRect"]
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
@@ -73,7 +73,7 @@ margin_bottom = 8.0
 align = 1
 valign = 1
 
-[node name="equiptment_container" type="Control" parent="VBoxContainer/equiptment"]
+[node name="equipment_container" type="Control" parent="VBoxContainer/equipment"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -78.0
@@ -82,13 +82,13 @@ margin_right = 78.0
 margin_bottom = 213.0
 rect_min_size = Vector2( 156, 179 )
 
-[node name="equiptment_bumper" parent="VBoxContainer/equiptment/equiptment_container" instance=ExtResource( 4 )]
+[node name="equipment_bumper" parent="VBoxContainer/equipment/equipment_container" instance=ExtResource( 4 )]
 margin_left = 30.0
 margin_top = 11.0
 margin_right = 66.0
 margin_bottom = 47.0
 
-[node name="equiptment_cab" parent="VBoxContainer/equiptment/equiptment_container" instance=ExtResource( 4 )]
+[node name="equipment_cab" parent="VBoxContainer/equipment/equipment_container" instance=ExtResource( 4 )]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -66.0
@@ -97,7 +97,7 @@ margin_right = -30.0
 margin_bottom = 47.0
 type = 1
 
-[node name="equiptment_exhaust" parent="VBoxContainer/equiptment/equiptment_container" instance=ExtResource( 4 )]
+[node name="equipment_exhaust" parent="VBoxContainer/equipment/equipment_container" instance=ExtResource( 4 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -108,7 +108,7 @@ margin_right = 48.0
 margin_bottom = 17.5
 type = 3
 
-[node name="equiptment_engine" parent="VBoxContainer/equiptment/equiptment_container" instance=ExtResource( 4 )]
+[node name="equipment_engine" parent="VBoxContainer/equipment/equipment_container" instance=ExtResource( 4 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -119,7 +119,7 @@ margin_right = -12.0
 margin_bottom = 17.5
 type = 2
 
-[node name="equiptment_back_wheels" parent="VBoxContainer/equiptment/equiptment_container" instance=ExtResource( 4 )]
+[node name="equipment_back_wheels" parent="VBoxContainer/equipment/equipment_container" instance=ExtResource( 4 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -130,7 +130,7 @@ margin_right = 48.0
 margin_bottom = 77.5
 type = 5
 
-[node name="equiptment_front_wheels" parent="VBoxContainer/equiptment/equiptment_container" instance=ExtResource( 4 )]
+[node name="equipment_front_wheels" parent="VBoxContainer/equipment/equipment_container" instance=ExtResource( 4 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

@@ -33,6 +33,7 @@ light_energy = 0.5
 shadow_enabled = true
 
 [node name="vehicle" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25 )
 
 [node name="SpringArm" type="SpringArm" parent="vehicle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
@@ -44,11 +45,15 @@ margin = 0.5
 transform = Transform( 0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 8, 6, 8 )
 
 [node name="world_item" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, -1 )
 item_id = "basic_cab"
 
 [node name="world_item2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 1 )
+item_id = "basic_wheel"
+
+[node name="world_item3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0 )
 item_id = "basic_wheel"
 
 [node name="managers" type="Node2D" parent="."]
@@ -56,9 +61,14 @@ item_id = "basic_wheel"
 [node name="inventory_manager" type="Node2D" parent="managers"]
 script = ExtResource( 5 )
 item_in_hand_node = NodePath("../../CanvasLayer/item_in_hand")
+item_void = NodePath("../../CanvasLayer/item_void")
 item_info = NodePath("../../CanvasLayer/item_info")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="item_void" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="inventory_player" parent="CanvasLayer" instance=ExtResource( 4 )]
 

@@ -24,7 +24,6 @@ func try_put_item(new_item: Item) -> bool:
 	return new_item and not item or (item.id == new_item.id)
 	
 func put_item(new_item : Item) -> Item:
-	#if slot is EquiptmentSlot and item_in_hand.equiptment_type != slot.type and item_in_hand.secondary_type != slot.type:
 	if new_item:
 		if item:
 			var temp_item = item

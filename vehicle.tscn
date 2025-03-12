@@ -1,19 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://vehicle.gd" type="Script" id=1]
 [ext_resource path="res://pickup_labels.gd" type="Script" id=2]
 [ext_resource path="res://MeshInstance.tscn" type="PackedScene" id=3]
+[ext_resource path="res://default_wheel.tscn" type="PackedScene" id=4]
 
 [sub_resource type="PhysicsMaterial" id=5]
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
-
-[sub_resource type="CylinderMesh" id=3]
-material = SubResource( 6 )
-top_radius = 0.5
-bottom_radius = 0.5
-height = 0.5
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 0.5, 2 )
@@ -46,9 +38,7 @@ suspension_max_force = 160.0
 damping_compression = 0.7
 damping_relaxation = 0.7
 
-[node name="MeshInstance" type="MeshInstance" parent="FrontLeft"]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
-mesh = SubResource( 3 )
+[node name="MeshInstance" parent="FrontLeft" instance=ExtResource( 4 )]
 
 [node name="FrontRight" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 2 )
@@ -60,9 +50,7 @@ suspension_max_force = 160.0
 damping_compression = 0.7
 damping_relaxation = 0.7
 
-[node name="MeshInstance" type="MeshInstance" parent="FrontRight"]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
-mesh = SubResource( 3 )
+[node name="MeshInstance" parent="FrontRight" instance=ExtResource( 4 )]
 
 [node name="BackLeft" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, -1.5 )
@@ -74,9 +62,7 @@ suspension_max_force = 160.0
 damping_compression = 0.7
 damping_relaxation = 0.7
 
-[node name="MeshInstance" type="MeshInstance" parent="BackLeft"]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
-mesh = SubResource( 3 )
+[node name="MeshInstance" parent="BackLeft" instance=ExtResource( 4 )]
 
 [node name="BackRight" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -1.5 )
@@ -88,9 +74,7 @@ suspension_max_force = 160.0
 damping_compression = 0.7
 damping_relaxation = 0.7
 
-[node name="MeshInstance" type="MeshInstance" parent="BackRight"]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
-mesh = SubResource( 3 )
+[node name="MeshInstance" parent="BackRight" instance=ExtResource( 4 )]
 
 [node name="Spatial" type="Spatial" parent="."]
 

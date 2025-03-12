@@ -1,10 +1,10 @@
 extends NinePatchRect
 
 export(NodePath) onready var inventory = get_node(inventory) as Inventory
-export(NodePath) onready var equiptment = get_node(equiptment) as Inventory
+export(NodePath) onready var equipment = get_node(equipment) as Inventory
 
 func _ready():
-	var inventories = [inventory, equiptment]
+	var inventories = [inventory, equipment]
 	SignalManager.emit_signal("player_inventory_ready", inventories)
 
 

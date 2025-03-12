@@ -1,7 +1,7 @@
 class_name GameEnums
 
 
-enum EQUPTMENT_TYPE {
+enum EQUIPMENT_TYPE {
 	BUMPER,
 	CAB,
 	ENGINE,
@@ -10,3 +10,6 @@ enum EQUPTMENT_TYPE {
 	BACK_WHEELS
 }
 
+enum AFFIX_TYPE {
+	PREFIX
+}

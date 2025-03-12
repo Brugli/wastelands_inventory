@@ -1,0 +1,23 @@
+{
+	"speed" : {
+		"type" : "PREFIX",
+		"apply_to" : [
+			"CAB",
+			"BUMPER"
+		],
+		"affixes" : {
+			"lightweight" : (
+				"affic_name" : "lightweight",
+				"min_level" : 1
+			},
+			"stripped" : {
+				"affic_name" : "stripped",
+				"min_level" : 1
+			},
+			"heavy" : {
+				"affic_name" : "heavy",
+				"min_level" : 1
+			}
+		}		
+	}
+}
