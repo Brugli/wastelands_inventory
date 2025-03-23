@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://vehicle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://inventory/scenes/item_info.tscn" type="PackedScene" id=2]
 [ext_resource path="res://inventory/items/scenes/world_item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://inventory/scenes/inventory_player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://inventory/managers/inventory_manager.gd" type="Script" id=5]
+[ext_resource path="res://inventory/scripts/item_spawner.gd" type="Script" id=6]
 
 [sub_resource type="PhysicsMaterial" id=3]
 rough = true
@@ -14,6 +15,9 @@ extents = Vector3( 100, 1, 100 )
 
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 200, 2, 200 )
+
+[sub_resource type="ORMSpatialMaterial" id=4]
+albedo_color = Color( 0.517647, 0.380392, 0.298039, 1 )
 
 [node name="Spatial" type="StaticBody"]
 collision_mask = 3
@@ -26,6 +30,7 @@ shape = SubResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
+material/0 = SubResource( 4 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 12, 0 )
@@ -44,18 +49,6 @@ margin = 0.5
 [node name="Camera" type="Camera" parent="vehicle"]
 transform = Transform( 0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 8, 6, 8 )
 
-[node name="world_item" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, -1 )
-item_id = "basic_cab"
-
-[node name="world_item2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 1 )
-item_id = "basic_wheel"
-
-[node name="world_item3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0 )
-item_id = "basic_wheel"
-
 [node name="managers" type="Node2D" parent="."]
 
 [node name="inventory_manager" type="Node2D" parent="managers"]
@@ -70,6 +63,17 @@ item_info = NodePath("../../CanvasLayer/item_info")
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = -10.0
+margin_right = 75.0
+margin_bottom = 10.0
+text = "Item"
+script = ExtResource( 6 )
+items = [ "basic_cab" ]
+
 [node name="inventory_player" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="item_info" parent="CanvasLayer" instance=ExtResource( 2 )]
@@ -77,3 +81,9 @@ visible = false
 
 [node name="item_in_hand" type="Control" parent="CanvasLayer"]
 mouse_filter = 2
+
+[node name="Area" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+item_id = "basic_cab"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_Button_pressed"]

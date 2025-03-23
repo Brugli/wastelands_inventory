@@ -4,24 +4,20 @@
 [ext_resource path="res://inventory/scripts/item_info.gd" type="Script" id=2]
 
 [node name="item_info" type="NinePatchRect"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -64.0
-margin_top = -36.0
-margin_right = 64.0
+margin_right = 128.0
+margin_bottom = 36.0
 texture = ExtResource( 1 )
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 script = ExtResource( 2 )
-item_name = NodePath("Label")
+line_container = NodePath("line_container")
 
-[node name="Label" type="Label" parent="."]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 59.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="line_container" type="VBoxContainer" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 124.0
+margin_bottom = 32.0
+mouse_filter = 2
+alignment = 1

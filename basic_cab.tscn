@@ -8,8 +8,7 @@ albedo_color = Color( 0, 0, 0, 1 )
 metallic = 1.0
 roughness = 0.0
 
-[sub_resource type="SpatialMaterial" id=2]
-resource_name = "Material.009"
+[sub_resource type="SpatialMaterial" id=42]
 vertex_color_use_as_albedo = true
 params_cull_mode = 2
 albedo_color = Color( 0.589213, 0.0278244, 0, 1 )
@@ -24,8 +23,7 @@ albedo_color = Color( 0.759482, 0.759482, 0.759482, 1 )
 metallic = 1.0
 roughness = 0.142107
 
-[sub_resource type="SpatialMaterial" id=4]
-resource_name = "Material.014"
+[sub_resource type="SpatialMaterial" id=43]
 vertex_color_use_as_albedo = true
 params_cull_mode = 2
 albedo_color = Color( 0.47468, 0.47468, 0.47468, 1 )
@@ -53,7 +51,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 6389207,
 "index_count": 1152,
-"material": SubResource( 2 ),
+"material": SubResource( 42 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( -1.11457, 0.930406, -4.0451, 2.23958, 0.221653, 0.185161 ) ],
 "vertex_count": 836
@@ -77,7 +75,7 @@ surfaces/3 = {
 "blend_shape_data": [  ],
 "format": 6389207,
 "index_count": 168,
-"material": SubResource( 4 ),
+"material": SubResource( 43 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( -1.40493, 0.291821, 3.46772, 2.79706, 0.902034, 0.525253 ) ],
 "vertex_count": 34

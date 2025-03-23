@@ -40,7 +40,7 @@ func _on_pickup_area_exited(area):
 		current_interactable = null
 
 func _update_mesh(type, new_item):
-	var child_node
+	#var child_node
 	if type == GameEnums.EQUIPMENT_TYPE.CAB:
 		if not new_item:
 			get_child(4).get_child(0).queue_free()

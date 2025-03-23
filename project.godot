@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://inventory/items/scripts/affix_group.gd"
 }, {
+"base": "Resource",
+"class": "AffixItem",
+"language": "GDScript",
+"path": "res://inventory/items/scripts/affix_item.gd"
+}, {
+"base": "Resource",
+"class": "BaseStat",
+"language": "GDScript",
+"path": "res://inventory/items/scripts/base_stat.gd"
+}, {
 "base": "InventorySlot",
 "class": "EquiptmentSlot",
 "language": "GDScript",
@@ -43,26 +53,66 @@ _global_script_classes=[ {
 "class": "Item",
 "language": "GDScript",
 "path": "res://inventory/items/scripts/item.gd"
+}, {
+"base": "Resource",
+"class": "ItemAffixList",
+"language": "GDScript",
+"path": "res://inventory/items/scripts/item_affix_list.gd"
+}, {
+"base": "NinePatchRect",
+"class": "ItemInfo",
+"language": "GDScript",
+"path": "res://inventory/scripts/item_info.gd"
+}, {
+"base": "Label",
+"class": "ItemInfoLine",
+"language": "GDScript",
+"path": "res://inventory/scripts/item_info_line.gd"
+}, {
+"base": "Label",
+"class": "ItemRarityLine",
+"language": "GDScript",
+"path": "res://inventory/scripts/item_rarity_line.gd"
+}, {
+"base": "Node",
+"class": "Resource_Manager",
+"language": "GDScript",
+"path": "res://inventory/managers/resource_manager.gd"
+}, {
+"base": "Resource",
+"class": "StatRange",
+"language": "GDScript",
+"path": "res://inventory/items/scripts/stat_range.gd"
 } ]
 _global_script_class_icons={
 "Affix": "",
 "AffixGroup": "",
+"AffixItem": "",
+"BaseStat": "",
 "EquiptmentSlot": "",
 "GameEnums": "",
 "Inventory": "",
 "InventorySlot": "",
-"Item": ""
+"Item": "",
+"ItemAffixList": "",
+"ItemInfo": "",
+"ItemInfoLine": "",
+"ItemRarityLine": "",
+"Resource_Manager": "",
+"StatRange": ""
 }
 
 [application]
 
 config/name="wastelands_inventory"
+run/main_scene="res://test.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 SignalManager="*res://inventory/managers/signal_manager.gd"
 ItemManager="*res://inventory/managers/item_manager.gd"
+ResourceManager="*res://inventory/managers/resource_manager.gd"
 
 [display]
 

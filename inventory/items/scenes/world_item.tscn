@@ -8,23 +8,6 @@ extents = Vector3( 0.25, 0.25, 0.25 )
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 0.5, 0.5, 0.5 )
 
-[sub_resource type="ORMSpatialMaterial" id=3]
-albedo_color = Color( 0.658824, 0, 0.192157, 1 )
-emission_enabled = true
-emission = Color( 0.423529, 0, 0.121569, 1 )
-emission_energy = 3.0
-emission_operator = 0
-emission_on_uv2 = true
-rim_enabled = true
-rim = 1.0
-rim_tint = 1.0
-depth_enabled = true
-depth_scale = -0.28
-depth_deep_parallax = false
-depth_flip_tangent = false
-depth_flip_binormal = false
-uv2_scale = Vector3( 0.25, 0.25, 0.25 )
-
 [sub_resource type="ArrayMesh" id=4]
 surfaces/0 = {
 "aabb": AABB( -0.278868, -0.278868, -0.278868, 0.557735, 0.557745, 0.557745 ),
@@ -33,16 +16,23 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 36,
-"material": SubResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
 }
 
+[sub_resource type="SpatialMaterial" id=5]
+emission_enabled = true
+emission = Color( 0.752941, 0.752941, 0.752941, 1 )
+emission_energy = 15.0
+emission_operator = 0
+emission_on_uv2 = false
+
 [node name="Area" type="Area"]
 collision_layer = 0
 collision_mask = 8
 script = ExtResource( 1 )
+outline = NodePath("MeshInstance/MeshInstance")
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
@@ -54,3 +44,4 @@ mesh = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
 mesh = SubResource( 4 )
+material/0 = SubResource( 5 )

@@ -10,6 +10,18 @@ enum EQUIPMENT_TYPE {
 	BACK_WHEELS
 }
 
+enum STAT {
+	SPEED,
+	ARMOUR
+}
+
 enum AFFIX_TYPE {
 	PREFIX
+}
+
+enum RARITY {
+	SCRAP,
+	RARE,
+	LEGENDARY,
+	UNIQUE
 }

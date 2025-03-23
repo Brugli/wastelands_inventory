@@ -1,22 +1,28 @@
 {
-	"speed" : {
-		"type" : "PREFIX",
-		"apply_to" : [
+	"speed": {
+		"type": "PREFIX",
+		"apply_to": [
 			"CAB",
 			"BUMPER"
 		],
-		"affixes" : {
-			"lightweight" : (
-				"affic_name" : "lightweight",
-				"min_level" : 1
+		"affixes": {
+			"lightweight": {
+				"affix_name": "Lightweight",
+				"min_level": 1,
+				"stat_ranges": [{
+					"stat": "SPEED",
+					"minimum": 1,
+					"maximum": 5
+				}]
 			},
 			"stripped" : {
-				"affic_name" : "stripped",
-				"min_level" : 1
-			},
-			"heavy" : {
-				"affic_name" : "heavy",
-				"min_level" : 1
+				"affix_name" : "Stripped",
+				"min_level" : 1,
+				"stat_ranges" : [{
+					"stat" : "SPEED",
+					"minimum" : 1,
+					"maximum" : 5
+				}]
 			}
 		}		
 	}

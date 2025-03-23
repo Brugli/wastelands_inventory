@@ -1,0 +1,10 @@
+{
+	"SPEED" :{
+		"name" : "Speed",
+		"display" : "+%s to Speed"
+	},
+	"ARMOUR" :{
+		"name" : "Armour",
+		"display" : "+%s to Armour"
+	}
+}

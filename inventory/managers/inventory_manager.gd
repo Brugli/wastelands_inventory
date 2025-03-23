@@ -67,10 +67,10 @@ func _on_player_inventory_ready(inv):
 	player_inventories = inv
 
 func set_item_void_filter():
-	item_void.mouse_filter = Control.MOUSE_FILTER_STOP if item_in_hand else Control.MOUSE_FILTER_IGNORE
+	item_void.mouse_filter = Control.MOUSE_FILTER_STOP if item_in_hand else Control.MOUSE_FILTER_PASS
 	
 func _on_void_gui_input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and item_in_hand:
 		SignalManager.emit_signal("item_dropped", item_in_hand)
 		item_in_hand_node.remove_child(item_in_hand)
 		item_in_hand = null

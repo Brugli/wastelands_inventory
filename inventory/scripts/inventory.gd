@@ -20,7 +20,6 @@ func _ready():
 	
 func set_container_size(value):
 	size = value
-	#rect_min_size.y = 75 + (ceil(size / 4) -1 ) * 41
 	
 	for s in size:
 		var new_slot = inventory_slot_resource.instance()
